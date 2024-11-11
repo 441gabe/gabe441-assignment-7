@@ -104,6 +104,7 @@ def index():
         beta0 = float(request.form["beta0"])
         beta1 = float(request.form["beta1"])
         S = int(request.form["S"])
+
         # Generate data and initial plots
         (
             X,
@@ -117,6 +118,7 @@ def index():
             slopes,
             intercepts,
         ) = generate_data(N, mu, beta0, beta1, sigma2, S)
+
         # Store data in session
         session["X"] = X.tolist()
         session["Y"] = Y.tolist()
